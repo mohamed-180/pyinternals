@@ -1,0 +1,6 @@
+[project.urls]
+Homepage = "https://github.com/mohamed-180/pyinternals"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
