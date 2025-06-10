@@ -1,8 +1,8 @@
 # coding: utf-8
 import ctypes
 
-from cpy_layouts import PyLongObject, PyUnicodeObject, PyDictObject
-from cpy_layouts import PyFloatObject, PyListObject
+from .cpy_layouts import PyLongObject, PyUnicodeObject, PyDictObject
+from .cpy_layouts import PyFloatObject, PyListObject
 def inspect_int(obj):
     addr = id(obj)
     obj = ctypes.cast(addr, ctypes.POINTER(PyLongObject)).contents
