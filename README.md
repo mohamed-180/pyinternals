@@ -21,13 +21,15 @@ pip install pyinternals
 ```
 ## Examples
 
-To inspect `int` we can use `inspect_int` or `inspect_obj`
+To inspect `int` we can use `inspect_int` or `inspect_obj` for brevity.
 
 ```python
 
-from pyinternals import inspect_int
+>>> from pyinternals import inspect_int
 
-inspect_int(78)
+>>> inspect_int(78)
+```
+```
 
 #---> Int at 0x1005b5310:
 ----------------------------------------
@@ -41,6 +43,32 @@ Digits (base 2^30):
   ob_digit[0]   | 78
 ----------------------------------------
 ```
+
+To inspect dictionary objects we can use `inspect_dict` or `inspect_obj`
+
+```python
+
+>>> from pyinternals import inspect_dict
+>>> inspect_dict({'x':12, 'y': 34})
+````
+```
+---> Dict at 0x101bb6c00:
+----------------------------------------
+Field           | Value
+----------------------------------------
+Reference count | 2
+Type address    | 0x1004eaac0
+Used            | 2
+Keys            | 0x101a915b0
+Values **(combined)** | None
+
+  Contents:
+    'x': 12
+    'y': 34
+----------------------------------------
+
+```
+Comined above means keys and values are stored in the dict, The other option is split where keys of the dict are shared. see: [PEP 412 -- Key-Sharing Dictionary](https://www.python.org/dev/peps/pep-0412/)
 
 ## Learning materials
 
