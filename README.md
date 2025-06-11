@@ -19,6 +19,29 @@ Install via pip:
 ```bash
 pip install pyinternals
 ```
+## Examples
+
+To inspect `int` we can use `inspect_int` or `inspect_obj`
+
+```python
+
+from pyinternals import inspect_int
+
+inspect_int(78)
+
+#---> Int at 0x1005b5310:
+----------------------------------------
+Field           | Value
+----------------------------------------
+Reference count | 10
+Type address    | 0x1004dfd50
+Size            | 1
+
+Digits (base 2^30):
+  ob_digit[0]   | 78
+----------------------------------------
+```
+
 ## Learning materials
 
 - CPython implementation : https://github.com/python/cpython
