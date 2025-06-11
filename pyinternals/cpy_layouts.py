@@ -54,6 +54,11 @@ class PyListObject(PyVarObject):
         ("ob_allocated", ctypes.c_ssize_t),
     ]
 
+class PyTupleObject(PyVarObject):
+    _fields_ = [
+        ("ob_items", ctypes.POINTER(ctypes.c_void_p)),  # pointer to array of PyObject*
+    ]
+
 
 class PyDictObject(PyObject):
     _fields_ = [
@@ -61,4 +66,16 @@ class PyDictObject(PyObject):
         ("ma_version_tag", ctypes.c_uint64),  # Optional
         ("ma_keys", ctypes.c_void_p),
         ("ma_values", ctypes.c_void_p),
+    ]
+
+class PySetObject(ctypes.Structure):
+    _fields_ = [
+        ("ob_refcnt", ctypes.c_ssize_t),
+        ("ob_type", ctypes.c_void_p),
+        ("fill", ctypes.c_ssize_t),
+        ("used", ctypes.c_ssize_t),
+        ("mask", ctypes.c_ssize_t),
+        ("table", ctypes.POINTER(ctypes.c_void_p)),
+        ("hash", ctypes.c_ssize_t),
+        ("weakreflist", ctypes.c_void_p),
     ]

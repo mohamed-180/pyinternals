@@ -2,7 +2,9 @@
 
 A visualizer for Python object layout in CPython.
 
-This package provides tools to inspect and visualize internal memory layout of Python objects such as lists, dicts, and custom classes.
+This package provides tools to directly inspecting Python objects through their C-level structure using `ctypes`.
+This is a powerful approach for deep object introspection, especially when you need to examine the internal memory representation of Python objects like `int`, `float`, `str`, `list`, `dict` and custom classes.
+
 
 ## Features
 
@@ -12,7 +14,12 @@ This package provides tools to inspect and visualize internal memory layout of P
 
 ## Installation
 
-Install via pip (once published):
+Install via pip:
 
 ```bash
 pip install pyinternals
+```
+## Learning materials
+
+- CPython implementation : https://github.com/python/cpython
+- Cpython Internals repository: https://github.com/zpoint/CPython-Internals
