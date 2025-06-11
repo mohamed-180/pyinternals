@@ -29,7 +29,7 @@ To inspect `int` we can use `inspect_int` or `inspect_obj` for brevity.
 
 >>> inspect_int(78)
 ```
-```
+```python
 
 #---> Int at 0x1005b5310:
 ----------------------------------------
@@ -51,7 +51,7 @@ To inspect dictionary objects we can use `inspect_dict` or `inspect_obj`
 >>> from pyinternals import inspect_dict
 >>> inspect_dict({'x':12, 'y': 34})
 ````
-```
+```python
 ---> Dict at 0x101bb6c00:
 ----------------------------------------
 Field           | Value
@@ -60,7 +60,7 @@ Reference count | 2
 Type address    | 0x1004eaac0
 Used            | 2
 Keys            | 0x101a915b0
-Values **(combined)** | None
+Values(combined)| None
 
   Contents:
     'x': 12
@@ -68,9 +68,11 @@ Values **(combined)** | None
 ----------------------------------------
 
 ```
-Comined above means keys and values are stored in the dict, The other option is split where keys of the dict are shared. see: [PEP 412 -- Key-Sharing Dictionary](https://www.python.org/dev/peps/pep-0412/)
+Combined above means keys and values are stored in the dict, The other option is split where keys of the dict are shared. see: [PEP 412 -- Key-Sharing Dictionary](https://www.python.org/dev/peps/pep-0412/)
 
 ## Learning materials
 
 - CPython implementation : https://github.com/python/cpython
 - Cpython Internals repository: https://github.com/zpoint/CPython-Internals
+- Eli Bendersky's website
+: https://eli.thegreenplace.net/tag/python-internals
